@@ -27,7 +27,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  // reporter: 'html',
+  reporter: 'html',
 
   // reporter: [['json', { outputFile: 'results.json' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -51,29 +51,29 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     //To run generic test
-    // {
-    //   name: 'chromium',
-    //   use: {
-    //     ...devices['Desktop Chrome']
+    {
+      name: 'chromium',
+      use: {
+        ...devices['Desktop Chrome']
 
-    //   },
-    // },
+      },
+    }
 
     //Using Global.setup
-    {
-      name: 'setup',
-      testMatch: '**/*.setup.ts'
-    },
-    {
-      name: 'AddItem',
-      testMatch: '**/*addItemDemoBlaze.spec.ts',
-      dependencies: ['setup'],
-      use: {
-        ...devices['Desktop Chrome'],
-        storageState: STORAGE_STATEFILE
-      }
+    // {
+    //   name: 'setup',
+    //   testMatch: '**/*.setup.ts'
+    // },
+    // {
+    //   name: 'AddItem',
+    //   testMatch: '**/*addItemDemoBlaze.spec.ts',
+    //   dependencies: ['setup'],
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     storageState: STORAGE_STATEFILE
+    //   }
 
-    }
+    // }
 
 
     // {

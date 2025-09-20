@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test launchContexts",
+    "test": "npx playwright test chkBoxRadio",
     "allTest": "npx playwright test",
     "uiTest": "npx playwright test --ui",
     "htmlReport": "npx playwright test --reporter=html",
     "chromium": "npx playwright test --project chromium",
-    "webkit": "npx playwright test launchContexts --project webkit"
+    "webkit": "npx playwright test launchContexts --project webkit",
+    "SmokeTest": "npx playwright test --grep @Smoke"
   },
   "keywords": [],
   "author": "",
